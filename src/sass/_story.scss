@@ -1,0 +1,12 @@
+.story{
+    background-color:goldenrod;
+
+    &__pictures{grid-column: extraStart / colEnd 4;
+    background: yellowgreen;}
+
+    
+    &__content{grid-column: colStart 5 / extraEnd;
+    background: olivedrab ;}
+
+    
+}

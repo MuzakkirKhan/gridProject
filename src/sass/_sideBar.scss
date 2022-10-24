@@ -1,0 +1,6 @@
+.sideBar{
+    background-color: royalblue;
+
+    grid-column: sideStart / sideEnd;
+    grid-row: 1 / -1;
+}
