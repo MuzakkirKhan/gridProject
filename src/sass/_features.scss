@@ -1,8 +1,34 @@
-.features{
-    background-color: red;
-
-    //grid-column: colStart / colEnd;
-    
+.features{  
+     
     grid-column: centerStart / centerEnd;
-    padding:100px
+    padding:100px;
+
+    display:grid;
+   // grid-template-columns: repeat(3, 1fr);   // this works but doesnt give responsiveness
+
+   grid-template-columns:repeat(auto-fit, minmax(25rem, 1fr));
+   // no need to define rows usually
+   grid-gap: 6rem;
+  // align-items: start;
+}
+
+.feature{
+    display:grid;  // for each of the feature div
+   // grid-template-columns: repeat(2, min-content);  content goes vertically
+    grid-template-columns: min-content 1fr;  // content goes horizontally - 1st is for icon; and 1fr refers to 2nd column which occupies the rest of the space
+    grid-row-gap: 1.5rem;   // gives gap between heading n content
+    grid-column-gap: 2.5rem;  // between icon n content
+
+
+    &__icon{
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+         grid-row: 1/ span 2;  // to push the text that has come beneath icn - this helps
+         transform: translateY(-1rem);
+    }
+
+    &__text{
+      font-size: 1.7rem;
+    }
 }

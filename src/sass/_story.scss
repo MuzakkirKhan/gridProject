@@ -1,12 +1,47 @@
-.story{
-    background-color:goldenrod;
+.story{ 
 
-    &__pictures{grid-column: extraStart / colEnd 4;
-    background: yellowgreen;}
+    &__pictures{
+    grid-column: extraStart / colEnd 4;
+    //background: url(../assets/images/back.jpg);
+    background-image: linear-gradient(rgba($color-primary, .5), rgba($color-primary, .5)), url(../assets/images/back.jpg);
+    display: grid; //This helps in overlapping the images 
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr); 
+    align-items: center;
 
+}
+
+  &__img-1{
+    width:100%;
+    grid-row: 2/5;
+    grid-column: 2/5;
+  }
+
+  &__img-2{
+      width:100%;
+      grid-row: 3/6;
+      grid-column: 3/6;
+  }
     
-    &__content{grid-column: colStart 5 / extraEnd;
-    background: olivedrab ;}
+    &__content{
+        grid-column: colStart 5 / extraEnd;
+        background-color: $color-grey-light-1;
+      //  padding: 6rem 12rem; // on small screens; found to have more padding - so to be more responsive - used vw
+      padding: 6rem 8vw;
+
+    // To bring the content to center; this will cause each of the item to occupy whole width - as by default is stretch
+    display:grid;
+    align-content: center; // aligned all of the items to center vertically; 
+    justify-items: start; // with this the button is pulled to start of the div
+ 
+
+}
+
+&__text{
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 4rem; // hardcoding as this wont be used ever again; in all other places; using helper classes
+}
 
     
 }
