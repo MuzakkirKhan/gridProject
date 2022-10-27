@@ -1,5 +1,50 @@
 .footer{
-    background-color: blue;
+    background-color: $color-secondary;
     grid-column: extraStart / extraEnd;
     padding:8rem
+}
+
+.nav{
+
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); 
+    // we could had just used repeat(6, 1fr); but to avoid writing media queries, autofit helps a lot    
+    grid-gap: 2rem;
+    align-items: center; // this adjust all links vertically center
+
+    // &__item{
+
+    // }
+
+ 
+    &__link:link,
+    &__link:visited {
+        font-size: 1.4rem;
+        color: #fff;
+        text-decoration: none;
+        font-family: $font-display;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 1.5rem;
+        display: block; // for animation to work we need this else it considers each on as a line element
+        transition: all .2s;
+    }
+
+    &__link:hover,
+    &__link:active {
+        background-color: rgba(#fff, .05);
+        transform: translateY(-3px);
+    }
+}
+
+.copyright {
+    font-size: 1.4rem;
+    color: $color-grey-light-2;
+    margin-top: 6rem;
+    // without margin; whole content comes to extreme left, to easily bring it to center is by giving left and right margin to auto
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    width: 70%;
 }
